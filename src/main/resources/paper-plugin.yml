@@ -1,0 +1,16 @@
+name: AstradalTPAGUi
+version: '${version}'
+main: net.astradal.astradalTPAGUi.AstradalTPAGUi
+api-version: '1.21'
+prefix: Astradal GUITpa
+author: Pookachu
+description: A plugin that manages many different aspects of Astradal
+website: https://www.astradal.net
+
+permissions:
+  astradal.TPAGui.use:
+    description: Allows someone to use the /tpagui command
+    default: op
+  astradal.TPAGui.reload:
+    description: Allows someone to reload the astradalTpaGui plugin
+    default: op
