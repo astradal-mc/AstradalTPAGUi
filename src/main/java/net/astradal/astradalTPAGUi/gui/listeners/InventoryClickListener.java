@@ -47,11 +47,8 @@ public class InventoryClickListener implements Listener {
         Player target = Bukkit.getPlayer(uuid);
 
         if (target != null && target.isOnline()) {
-            clicker.teleport(target.getLocation());
-            clicker.sendMessage(Component.text("Teleported to " + target.getName(), NamedTextColor.GREEN));
-        } else {
-            clicker.sendMessage(Component.text("That player is no longer online.", NamedTextColor.RED));
+            clicker.sendMessage(Component.text("Request sent to ", NamedTextColor.YELLOW).append(Component.text(target.getName(), NamedTextColor.GOLD)));
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "cmi tpa " + target.getName() + " " + clicker.getName());
         }
-
     }
 }
