@@ -48,7 +48,7 @@ public class CommandRootTPAGui implements Command<CommandSourceStack> {
 
         for (final Player target : targets) {
             target.sendRichMessage("TPAGui");
-            GUI gui = new GUI(plugin);
+            GUI gui = new GUI(plugin, target);
             target.openInventory(gui.getInventory());
 
 

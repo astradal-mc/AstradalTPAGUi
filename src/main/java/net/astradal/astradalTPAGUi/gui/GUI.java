@@ -12,7 +12,6 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -21,7 +20,7 @@ public class GUI implements InventoryHolder{
     private final Inventory inventory;
     public final AstradalTPAGUi plugin;
 
-    public GUI(AstradalTPAGUi plugin) {
+    public GUI(AstradalTPAGUi plugin, Player viewer) {
         this.plugin = plugin;
         int playerCount = plugin.getServer().getOnlinePlayers().size();
         int nextMultipleOf9 = (((playerCount+8)/9)*9);
@@ -29,7 +28,11 @@ public class GUI implements InventoryHolder{
         this.inventory = plugin.getServer().createInventory(this, nextMultipleOf9, Component.text("Tpa Menu"));
 
 
-        List<Player> players = new ArrayList<>(plugin.getServer().getOnlinePlayers());
+        List<Player> players = plugin.getServer().getOnlinePlayers()
+            .stream()
+            .map(p -> (Player) p)
+            .filter(p -> !p.getUniqueId().equals(viewer.getUniqueId()))
+            .toList();
 
         NamespacedKey key = new NamespacedKey(plugin, "tpa_target");
 
