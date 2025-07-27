@@ -9,7 +9,7 @@ public final class AstradalTPAGui extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        saveResource("config.yml", false);
+        saveDefaultConfig();
 
         //register command
         this.getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, commands ->

@@ -1,4 +1,4 @@
-name: AstradalTPAGUi
+name: AstradalTPAGui
 version: '${version}'
 main: net.astradal.astradalTPAGui.AstradalTPAGui
 api-version: '1.21'
