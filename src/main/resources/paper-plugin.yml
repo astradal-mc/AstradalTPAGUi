@@ -14,9 +14,26 @@ dependencies:
       required: true
 
 permissions:
-  astradal.TPAGui.use:
+  astradal.command.tpagui:
     description: Allows someone to use the /tpagui command
     default: op
   astradal.TPAGui.reload:
     description: Allows someone to reload the AstradalTPAGui plugin
     default: op
+
+commands:
+  tpagui:
+    description: "Opens the tpagui for a specified player"
+    usage: "/tpagui <playerName>"
+    permission: astradal.command.tpagui
+    permission-message: "You do not have permission to use this command"
+  tpagui-reload:
+    description: "Reloads the tpagui plugin's config"
+    usage: "/tpagui reload"
+    permission: astradal.command.reload
+    permission-message: "You do not have permission to use this command"
+  tpagui-version:
+    description: "Prints tpagui's plugin version"
+    usage: "/tpagui version"
+    permission: astradal.command.version
+    permission-message: "You do not have permission to use this command"

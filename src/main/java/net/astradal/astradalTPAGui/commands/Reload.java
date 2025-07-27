@@ -6,10 +6,10 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import net.astradal.astradalTPAGui.AstradalTPAGui;
 
-public class CommandReload implements Command<CommandSourceStack> {
+public final class Reload implements Command<CommandSourceStack> {
 
     private final AstradalTPAGui plugin;
-    public CommandReload(AstradalTPAGui plugin) {
+    public Reload(AstradalTPAGui plugin) {
         this.plugin = plugin;
     }
 
