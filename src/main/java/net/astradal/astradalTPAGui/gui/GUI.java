@@ -1,6 +1,6 @@
-package net.astradal.astradalTPAGUi.gui;
+package net.astradal.astradalTPAGui.gui;
 
-import net.astradal.astradalTPAGUi.AstradalTPAGUi;
+import net.astradal.astradalTPAGui.AstradalTPAGui;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
@@ -19,9 +19,9 @@ import java.util.stream.IntStream;
 public class GUI implements InventoryHolder{
 
     private final Inventory inventory;
-    public final AstradalTPAGUi plugin;
+    public final AstradalTPAGui plugin;
 
-    public GUI(AstradalTPAGUi plugin, Player viewer) {
+    public GUI(AstradalTPAGui plugin, Player viewer) {
         this.plugin = plugin;
         int playerCount = plugin.getServer().getOnlinePlayers().size()-1; // -1 to remove yourself from the list because your head is not displayed
 

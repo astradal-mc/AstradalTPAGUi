@@ -1,4 +1,4 @@
-package net.astradal.astradalTPAGUi.commands;
+package net.astradal.astradalTPAGui.commands;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
@@ -8,8 +8,8 @@ import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.command.brigadier.Commands;
 import io.papermc.paper.command.brigadier.argument.ArgumentTypes;
 import io.papermc.paper.command.brigadier.argument.resolvers.selector.PlayerSelectorArgumentResolver;
-import net.astradal.astradalTPAGUi.AstradalTPAGUi;
-import net.astradal.astradalTPAGUi.gui.GUI;
+import net.astradal.astradalTPAGui.AstradalTPAGui;
+import net.astradal.astradalTPAGui.gui.GUI;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -19,13 +19,13 @@ import java.util.List;
 public class CommandRootTPAGui implements Command<CommandSourceStack> {
 
     //plugin instance constructor injection
-    private final AstradalTPAGUi plugin;
-    public CommandRootTPAGui(AstradalTPAGUi plugin) {
+    private final AstradalTPAGui plugin;
+    public CommandRootTPAGui(AstradalTPAGui plugin) {
         this.plugin = plugin;
     }
 
     //define command tree here
-    public static LiteralCommandNode<CommandSourceStack> create(AstradalTPAGUi plugin) {
+    public static LiteralCommandNode<CommandSourceStack> create(AstradalTPAGui plugin) {
         return
             //this command
             Commands.literal("tpagui")

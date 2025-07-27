@@ -1,6 +1,6 @@
-package net.astradal.astradalTPAGUi.gui.listeners;
+package net.astradal.astradalTPAGui.gui.listeners;
 
-import net.astradal.astradalTPAGUi.gui.GUI;
+import net.astradal.astradalTPAGui.gui.GUI;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;

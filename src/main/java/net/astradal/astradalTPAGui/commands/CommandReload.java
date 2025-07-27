@@ -1,15 +1,15 @@
-package net.astradal.astradalTPAGUi.commands;
+package net.astradal.astradalTPAGui.commands;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
-import net.astradal.astradalTPAGUi.AstradalTPAGUi;
+import net.astradal.astradalTPAGui.AstradalTPAGui;
 
 public class CommandReload implements Command<CommandSourceStack> {
 
-    private final AstradalTPAGUi plugin;
-    public CommandReload(AstradalTPAGUi plugin) {
+    private final AstradalTPAGui plugin;
+    public CommandReload(AstradalTPAGui plugin) {
         this.plugin = plugin;
     }
 

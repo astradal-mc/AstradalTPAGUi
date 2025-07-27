@@ -1,11 +1,11 @@
-package net.astradal.astradalTPAGUi;
+package net.astradal.astradalTPAGui;
 
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
-import net.astradal.astradalTPAGUi.commands.CommandRootTPAGui;
-import net.astradal.astradalTPAGUi.gui.listeners.InventoryClickListener;
+import net.astradal.astradalTPAGui.commands.CommandRootTPAGui;
+import net.astradal.astradalTPAGui.gui.listeners.InventoryClickListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class AstradalTPAGUi extends JavaPlugin {
+public final class AstradalTPAGui extends JavaPlugin {
 
     @Override
     public void onEnable() {
