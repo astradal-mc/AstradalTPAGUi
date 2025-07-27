@@ -25,11 +25,11 @@ public class GUI implements InventoryHolder{
         this.plugin = plugin;
         int playerCount = plugin.getServer().getOnlinePlayers().size()-1; // -1 to remove yourself from the list because your head is not displayed
 
-        // Inventories are in multiples of nines. Add 8 to round up, and divide and multiply to get the nearest multiple.
+        // Inventories are in multiples of nines. Add 8 to round up, and divide and multiply by 9 to get the nearest multiple of 9.
         int nextMultipleOf9 = (((playerCount+8)/9)*9);
 
         // Initialize inventory
-        this.inventory = plugin.getServer().createInventory(this, nextMultipleOf9, Component.text("               TPA Menu", NamedTextColor.BLACK));
+        this.inventory = plugin.getServer().createInventory(this, nextMultipleOf9, Component.text("TPA Menu", NamedTextColor.BLACK));
 
         // Get all the online players as a list, filtering for yourself
         List<Player> players = plugin.getServer().getOnlinePlayers()
@@ -52,15 +52,15 @@ public class GUI implements InventoryHolder{
             SkullMeta meta = (SkullMeta) head.getItemMeta();
 
             if(meta != null) {
-                meta.setOwningPlayer(plugin.getServer().getOfflinePlayer(player.getName()));
-                meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, player.getUniqueId().toString());
-                meta.displayName(
-                    Component.text(player.getName(), NamedTextColor.GOLD));
-                meta.lore(lore);
+                meta.setOwningPlayer(plugin.getServer().getOfflinePlayer(player.getName())); //set skull's owner
+                meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, player.getUniqueId().toString()); //add owner UUID to data storage of head
+                meta.displayName(Component.text(player.getName(), NamedTextColor.GOLD)); //set skull name
+                meta.lore(lore); //set usage instruction text as lore
                 head.setItemMeta(meta);
 
             }
 
+            // Set the head slot from the intstream to the head we just built
             this.inventory.setItem(i, head);
         });
     }
