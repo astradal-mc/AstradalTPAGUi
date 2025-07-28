@@ -4,10 +4,13 @@ plugins {
 }
 
 group = 'net.astradal'
-version = '3'
+version = '6'
 
 repositories {
     mavenCentral()
+    maven {
+        url ='https://jitpack.io'
+    }
     maven {
         name = "papermc-repo"
         url = "https://repo.papermc.io/repository/maven-public/"
@@ -20,6 +23,7 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT")
+    compileOnly 'com.github.Zrips:CMI-API:9.7.14.3'
 }
 
 tasks {

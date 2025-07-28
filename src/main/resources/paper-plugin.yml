@@ -20,20 +20,30 @@ permissions:
   astradal.TPAGui.reload:
     description: Allows someone to reload the AstradalTPAGui plugin
     default: op
+  astradal.tpagui.command.getscroll:
+    description: Allows someone to give themselves a scroll.
+    default: op
 
 commands:
   tpagui:
     description: "Opens the tpagui for a specified player"
     usage: "/tpagui <playerName>"
-    permission: astradal.command.tpagui
+    permission: astradal.tpagui.command.tpagui
     permission-message: "You do not have permission to use this command"
+
+  tpagui-getscroll:
+    description: "Gives yourself a tpagui scroll"
+    usage: "/tpagui getscroll"
+    permission: astradal.tpagui.command.getscroll
+
   tpagui-reload:
     description: "Reloads the tpagui plugin's config"
     usage: "/tpagui reload"
-    permission: astradal.command.reload
+    permission: astradal.tpagui.command.reload
     permission-message: "You do not have permission to use this command"
+
   tpagui-version:
     description: "Prints tpagui's plugin version"
     usage: "/tpagui version"
-    permission: astradal.command.version
+    permission: astradal.tpagui.command.version
     permission-message: "You do not have permission to use this command"

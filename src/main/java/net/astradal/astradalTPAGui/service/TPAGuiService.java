@@ -7,10 +7,10 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+
 public final class TPAGuiService {
 
     private final AstradalTPAGui plugin;
-
     public TPAGuiService(AstradalTPAGui plugin) {
         this.plugin = plugin;
     }

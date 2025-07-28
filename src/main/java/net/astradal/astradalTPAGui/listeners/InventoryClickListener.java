@@ -1,4 +1,4 @@
-package net.astradal.astradalTPAGui.gui.listeners;
+package net.astradal.astradalTPAGui.listeners;
 
 import net.astradal.astradalTPAGui.gui.GUI;
 import net.kyori.adventure.text.Component;
