@@ -1,4 +1,4 @@
-package net.astradal.astradalTPAGui.service;
+package net.astradal.astradalTPAGui.services;
 
 import net.astradal.astradalTPAGui.AstradalTPAGui;
 import net.astradal.astradalTPAGui.gui.GUI;

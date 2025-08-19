@@ -4,7 +4,7 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
-import net.astradal.astradalTPAGui.service.TPAScrollService;
+import net.astradal.astradalTPAGui.services.TPAScrollService;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.CommandSender;
@@ -26,7 +26,7 @@ public class GetScroll implements Command<CommandSourceStack> {
         }
 
         player.getInventory().addItem(scrollService.createTPAScrollItem());
-        player.sendMessage(Component.text("You have been give na TPA Scroll.", NamedTextColor.GREEN));
+        player.sendMessage(Component.text("You have been given a TPA Scroll.", NamedTextColor.GREEN));
         return Command.SINGLE_SUCCESS;
     }
 }

@@ -1,13 +1,12 @@
 package net.astradal.astradalTPAGui;
 
-import com.Zrips.CMI.CMI;
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import net.astradal.astradalTPAGui.commands.Root;
 import net.astradal.astradalTPAGui.listeners.CMITeleportListener;
 import net.astradal.astradalTPAGui.listeners.InventoryClickListener;
 import net.astradal.astradalTPAGui.listeners.OnScrollUse;
 import net.astradal.astradalTPAGui.listeners.TPACommandListener;
-import net.astradal.astradalTPAGui.service.TPAScrollService;
+import net.astradal.astradalTPAGui.services.TPAScrollService;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AstradalTPAGui extends JavaPlugin {

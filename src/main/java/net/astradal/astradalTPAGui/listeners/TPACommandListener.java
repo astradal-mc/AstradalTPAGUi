@@ -1,7 +1,7 @@
 package net.astradal.astradalTPAGui.listeners;
 
 import net.astradal.astradalTPAGui.AstradalTPAGui;
-import net.astradal.astradalTPAGui.service.TPAScrollService;
+import net.astradal.astradalTPAGui.services.TPAScrollService;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;

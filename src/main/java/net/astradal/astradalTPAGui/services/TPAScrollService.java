@@ -1,4 +1,4 @@
-package net.astradal.astradalTPAGui.service;
+package net.astradal.astradalTPAGui.services;
 
 import com.Zrips.CMI.CMI;
 import net.astradal.astradalTPAGui.AstradalTPAGui;

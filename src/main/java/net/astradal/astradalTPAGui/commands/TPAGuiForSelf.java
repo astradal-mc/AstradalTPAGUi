@@ -4,7 +4,7 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import net.astradal.astradalTPAGui.AstradalTPAGui;
-import net.astradal.astradalTPAGui.service.TPAGuiService;
+import net.astradal.astradalTPAGui.services.TPAGuiService;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 

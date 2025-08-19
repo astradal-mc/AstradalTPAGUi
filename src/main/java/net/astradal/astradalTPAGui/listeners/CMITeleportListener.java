@@ -3,7 +3,7 @@ package net.astradal.astradalTPAGui.listeners;
 import com.Zrips.CMI.events.CMIAsyncPlayerTeleportEvent;
 import com.Zrips.CMI.events.CMICancellableEvent;
 import net.astradal.astradalTPAGui.AstradalTPAGui;
-import net.astradal.astradalTPAGui.service.TPAScrollService;
+import net.astradal.astradalTPAGui.services.TPAScrollService;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

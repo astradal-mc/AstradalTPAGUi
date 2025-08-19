@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class GUI implements InventoryHolder{
+public class GUI implements InventoryHolder {
 
     private final Inventory inventory;
     public final AstradalTPAGui plugin;
