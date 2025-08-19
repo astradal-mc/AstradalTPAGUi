@@ -1,6 +1,6 @@
 package net.astradal.astradalTPAGui.listeners;
 
-import net.astradal.astradalTPAGui.gui.GUI;
+import net.astradal.astradalTPAGui.gui.GuiInventory;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
@@ -23,7 +23,7 @@ public final class InventoryClickListener implements Listener {
     public void onInventoryClick(InventoryClickEvent event) {
 
         Inventory inventory = event.getClickedInventory();
-        if (inventory == null || !(inventory.getHolder(false) instanceof GUI gui)) return;
+        if (inventory == null || !(inventory.getHolder(false) instanceof GuiInventory gui)) return;
 
         event.setCancelled(true);
 

@@ -1,4 +1,4 @@
-package net.astradal.astradalTPAGui.commands;
+package net.astradal.astradalTPAGui.commands.subcommands;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
@@ -8,10 +8,10 @@ import net.astradal.astradalTPAGui.AstradalTPAGui;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 
-public final class Version implements Command<CommandSourceStack> {
+public final class VersionCommand implements Command<CommandSourceStack> {
 
     private final AstradalTPAGui plugin;
-    public Version(AstradalTPAGui plugin) {
+    public VersionCommand(AstradalTPAGui plugin) {
         this.plugin = plugin;
     }
 

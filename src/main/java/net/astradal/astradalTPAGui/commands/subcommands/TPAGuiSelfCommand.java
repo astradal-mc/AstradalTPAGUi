@@ -1,4 +1,4 @@
-package net.astradal.astradalTPAGui.commands;
+package net.astradal.astradalTPAGui.commands.subcommands;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
@@ -8,10 +8,10 @@ import net.astradal.astradalTPAGui.services.TPAGuiService;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public final class TPAGuiForSelf implements Command<CommandSourceStack> {
+public final class TPAGuiSelfCommand implements Command<CommandSourceStack> {
     private final TPAGuiService service;
 
-    public TPAGuiForSelf(AstradalTPAGui plugin) {
+    public TPAGuiSelfCommand(AstradalTPAGui plugin) {
         this.service = new TPAGuiService(plugin);
     }
 

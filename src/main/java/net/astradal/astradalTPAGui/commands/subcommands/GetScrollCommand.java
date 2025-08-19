@@ -1,4 +1,4 @@
-package net.astradal.astradalTPAGui.commands;
+package net.astradal.astradalTPAGui.commands.subcommands;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
@@ -10,10 +10,10 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class GetScroll implements Command<CommandSourceStack> {
+public final class GetScrollCommand implements Command<CommandSourceStack> {
     private final TPAScrollService scrollService;
 
-    public GetScroll(TPAScrollService scrollService) {
+    public GetScrollCommand(TPAScrollService scrollService) {
         this.scrollService = scrollService;
     }
 

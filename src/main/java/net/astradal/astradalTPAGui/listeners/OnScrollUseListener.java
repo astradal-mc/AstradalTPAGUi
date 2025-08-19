@@ -9,11 +9,11 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class OnScrollUse implements Listener {
+public class OnScrollUseListener implements Listener {
 
     private final AstradalTPAGui plugin;
     private final TPAScrollService scrollService;
-    public OnScrollUse(AstradalTPAGui plugin, TPAScrollService scrollService) {
+    public OnScrollUseListener(AstradalTPAGui plugin, TPAScrollService scrollService) {
         this.plugin = plugin;
         this.scrollService = scrollService;
     }

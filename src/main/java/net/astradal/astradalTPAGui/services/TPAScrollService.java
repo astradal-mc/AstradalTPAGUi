@@ -2,7 +2,7 @@ package net.astradal.astradalTPAGui.services;
 
 import com.Zrips.CMI.CMI;
 import net.astradal.astradalTPAGui.AstradalTPAGui;
-import net.astradal.astradalTPAGui.gui.GUI;
+import net.astradal.astradalTPAGui.gui.GuiInventory;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
@@ -92,7 +92,7 @@ public class TPAScrollService {
     public boolean openGuiIfScroll(Player player, ItemStack item) {
         if (!isTPAScroll(item)) return false;
 
-        GUI gui = new GUI(plugin, player);
+        GuiInventory gui = new GuiInventory(plugin, player);
         player.openInventory(gui.getInventory());
         markUsedScroll(player); // track the scroll usage
         return true;

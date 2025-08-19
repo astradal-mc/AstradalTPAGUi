@@ -1,7 +1,7 @@
 package net.astradal.astradalTPAGui.services;
 
 import net.astradal.astradalTPAGui.AstradalTPAGui;
-import net.astradal.astradalTPAGui.gui.GUI;
+import net.astradal.astradalTPAGui.gui.GuiInventory;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.CommandSender;
@@ -21,7 +21,7 @@ public final class TPAGuiService {
             return false;
         }
 
-        GUI gui = new GUI(plugin, target);
+        GuiInventory gui = new GuiInventory(plugin, target);
         target.openInventory(gui.getInventory());
         return true;
     }

@@ -16,12 +16,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class GUI implements InventoryHolder {
+public class GuiInventory implements InventoryHolder {
 
     private final Inventory inventory;
     public final AstradalTPAGui plugin;
 
-    public GUI(AstradalTPAGui plugin, Player viewer) {
+    public GuiInventory(AstradalTPAGui plugin, Player viewer) {
         this.plugin = plugin;
         int playerCount = plugin.getServer().getOnlinePlayers().size()-1; // -1 to remove yourself from the list because your head is not displayed
 
@@ -60,7 +60,7 @@ public class GUI implements InventoryHolder {
 
             }
 
-            // Set the head slot from the intstream to the head we just built
+            // Set the head slot from the int stream to the head we just built
             this.inventory.setItem(i, head);
         });
     }

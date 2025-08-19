@@ -1,4 +1,4 @@
-package net.astradal.astradalTPAGui.commands;
+package net.astradal.astradalTPAGui.commands.subcommands;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
@@ -6,10 +6,10 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import net.astradal.astradalTPAGui.AstradalTPAGui;
 
-public final class Reload implements Command<CommandSourceStack> {
+public final class ReloadCommand implements Command<CommandSourceStack> {
 
     private final AstradalTPAGui plugin;
-    public Reload(AstradalTPAGui plugin) {
+    public ReloadCommand(AstradalTPAGui plugin) {
         this.plugin = plugin;
     }
 
