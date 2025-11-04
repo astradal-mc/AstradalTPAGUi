@@ -4,7 +4,7 @@ main: net.astradal.astradalTPAGui.AstradalTPAGui
 api-version: '1.21'
 prefix: AstradalTPAGui
 author: Pookachu
-description: A plugin that manages many different aspects of Astradal
+description: A plugin that lets players TPA using scrolls
 website: https://github.com/astradal-mc/AstradalTPAGui
 
 dependencies:
@@ -14,14 +14,17 @@ dependencies:
       required: true
 
 permissions:
-  astradal.command.tpagui:
+  astradal.tpagui.command.tpagui:
     description: Allows someone to use the /tpagui command
-    default: op
-  astradal.TPAGui.reload:
-    description: Allows someone to reload the AstradalTPAGui plugin
     default: op
   astradal.tpagui.command.getscroll:
     description: Allows someone to give themselves a scroll.
+    default: op
+  astradal.tpagui.command.reload:
+    description: Allows someone to reload the AstradalTPAGui plugin
+    default: op
+  astradal.tpagui.command.version:
+    description: Allows someone to view the plugin version
     default: op
 
 commands:
@@ -29,21 +32,15 @@ commands:
     description: "Opens the tpagui for a specified player"
     usage: "/tpagui <playerName>"
     permission: astradal.tpagui.command.tpagui
-    permission-message: "You do not have permission to use this command"
-
   tpagui-getscroll:
     description: "Gives yourself a tpagui scroll"
     usage: "/tpagui getscroll"
     permission: astradal.tpagui.command.getscroll
-
   tpagui-reload:
     description: "Reloads the tpagui plugin's config"
     usage: "/tpagui reload"
     permission: astradal.tpagui.command.reload
-    permission-message: "You do not have permission to use this command"
-
   tpagui-version:
     description: "Prints tpagui's plugin version"
     usage: "/tpagui version"
     permission: astradal.tpagui.command.version
-    permission-message: "You do not have permission to use this command"

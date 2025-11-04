@@ -1,22 +1,24 @@
 package net.astradal.astradalTPAGui.commands.subcommands;
 
 import com.mojang.brigadier.Command;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
+import io.papermc.paper.command.brigadier.Commands;
 import net.astradal.astradalTPAGui.AstradalTPAGui;
+import net.astradal.astradalTPAGui.commands.TPAGuiPermissions;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 
-public final class VersionCommand implements Command<CommandSourceStack> {
+public final class VersionCommand {
 
-    private final AstradalTPAGui plugin;
-    public VersionCommand(AstradalTPAGui plugin) {
-        this.plugin = plugin;
+    public static LiteralArgumentBuilder<CommandSourceStack> build(AstradalTPAGui plugin) {
+        return Commands.literal("version")
+            .requires(TPAGuiPermissions.requires("version"))
+            .executes(ctx -> execute(ctx, plugin));
     }
 
-    @Override
-    public int run(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
+    public static int execute(CommandContext<CommandSourceStack> context, AstradalTPAGui plugin) {
 
         // get version
         String version = plugin.getPluginMeta().getVersion();

@@ -1,5 +1,8 @@
 package net.astradal.astradalTPAGui;
 
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.tree.LiteralCommandNode;
+import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import net.astradal.astradalTPAGui.commands.TPAGuiCommand;
 import net.astradal.astradalTPAGui.listeners.CMITeleportListener;
@@ -12,6 +15,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AstradalTPAGui extends JavaPlugin {
 
+    private TPAScrollService scrollService;
+
+
     @Override
     public void onEnable() {
         // --- 1. Configuration ---
@@ -21,10 +27,9 @@ public final class AstradalTPAGui extends JavaPlugin {
         // This handles updating the version key
         ConfigMigrationUtil.updateVersionInConfig(this);
 
-        TPAScrollService scrollService = new TPAScrollService(this);
-        //register command
-        this.getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, commands ->
-            commands.registrar().register(TPAGuiCommand.create(this, scrollService)));
+        this.scrollService = new TPAScrollService(this);
+
+        registerCommands();
 
         getServer().getPluginManager().registerEvents(new OnScrollUseListener(this, scrollService), this);
         getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
@@ -36,5 +41,23 @@ public final class AstradalTPAGui extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    @SuppressWarnings("UnstableApiUsage")
+    private void registerCommands() {
+        this.getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, event -> {
+            final var registrar = event.registrar();
+            final var dispatcher = registrar.getDispatcher();
+
+            LiteralArgumentBuilder<CommandSourceStack> commandBuilder = TPAGuiCommand.create(this, dispatcher);
+
+            LiteralCommandNode<CommandSourceStack> commandNode = commandBuilder.build();
+
+            registrar.register(commandNode, "Manage the TPAGUI system");
+
+        });
+    }
+    public TPAScrollService getScrollService() {
+        return scrollService;
     }
 }

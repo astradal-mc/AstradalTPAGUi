@@ -1,20 +1,23 @@
 package net.astradal.astradalTPAGui.commands.subcommands;
 
 import com.mojang.brigadier.Command;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
+import io.papermc.paper.command.brigadier.Commands;
 import net.astradal.astradalTPAGui.AstradalTPAGui;
+import net.astradal.astradalTPAGui.commands.TPAGuiPermissions;
 
-public final class ReloadCommand implements Command<CommandSourceStack> {
+public final class ReloadCommand {
 
-    private final AstradalTPAGui plugin;
-    public ReloadCommand(AstradalTPAGui plugin) {
-        this.plugin = plugin;
+    public static LiteralArgumentBuilder<CommandSourceStack> build(AstradalTPAGui plugin) {
+        return Commands.literal("reload")
+            .requires(TPAGuiPermissions.requires("reload"))
+            .executes(ctx -> execute(ctx, plugin));
     }
 
-    @Override
-    public int run(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
+    public static int execute(CommandContext<CommandSourceStack> context, AstradalTPAGui plugin) throws CommandSyntaxException {
         plugin.reloadConfig();
         context.getSource().getSender().sendMessage("AstradalTPAGui reloaded");
         return Command.SINGLE_SUCCESS;
