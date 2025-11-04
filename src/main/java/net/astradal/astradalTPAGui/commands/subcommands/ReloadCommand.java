@@ -3,7 +3,6 @@ package net.astradal.astradalTPAGui.commands.subcommands;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.command.brigadier.Commands;
 import net.astradal.astradalTPAGui.AstradalTPAGui;
@@ -17,7 +16,7 @@ public final class ReloadCommand {
             .executes(ctx -> execute(ctx, plugin));
     }
 
-    public static int execute(CommandContext<CommandSourceStack> context, AstradalTPAGui plugin) throws CommandSyntaxException {
+    public static int execute(CommandContext<CommandSourceStack> context, AstradalTPAGui plugin) {
         plugin.reloadConfig();
         context.getSource().getSender().sendMessage("AstradalTPAGui reloaded");
         return Command.SINGLE_SUCCESS;

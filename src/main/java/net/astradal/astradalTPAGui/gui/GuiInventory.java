@@ -23,10 +23,10 @@ public class GuiInventory implements InventoryHolder {
 
     public GuiInventory(AstradalTPAGui plugin, Player viewer) {
         this.plugin = plugin;
-        if(plugin.getServer().getOnlinePlayers > 1) {
-            int playerCount = plugin.getServer().getOnlinePlayers().size() - 1; // -1 to remove yourself from the list because your head is not displayed
-        } else {
-            int playerCount = 1;
+
+        int playerCount = 1; //default case
+        if(plugin.getServer().getOnlinePlayers().size() > 1) { //ensure there are more than one person
+            playerCount = plugin.getServer().getOnlinePlayers().size() - 1; // -1 to remove yourself from the list because your head is not displayed
         }
 
         // Inventories are in multiples of nines. Add 8 to round up, and divide and multiply by 9 to get the nearest multiple of 9.
